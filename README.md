@@ -56,3 +56,13 @@ phpstan   | Uses [phpstan/phpstan](https://packagist.org/packages/phpstan/phpsta
 phpunit   | Uses [phpunit/phpunit](https://packagist.org/packages/phpunit/phpunit) as test framework
 psalm     | Uses [vimeo/psalm](https://packagist.org/packages/vimeo/psalm) to check for tainted strings
 test      | Runs infection, lint, phpcs, phpstan, phpunit and psalm
+
+## Workflows
+
+### Template sync
+
+Periodically checks for changes in [flavioheleno/php-skel](https://github.com/flavioheleno/php-skel) and, if there are any, creates or updates a pull request in this repository to review the changes.
+
+Workflow configuration: `.github/workflows/template-sync.yml`.
+
+Source: [solvaholic/template](https://github.com/solvaholic/template)
