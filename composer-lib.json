@@ -20,8 +20,12 @@
     }
   },
   "config": {
-    "sort-packages": true
+    "optimize-autoloader": true,
+    "sort-packages": true,
+    "preferred-install": "dist"
   },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "require": {
     "php": ">=8.0"
   },
@@ -40,7 +44,7 @@
     "infection": "vendor/bin/infection",
     "lint": "vendor/bin/parallel-lint --exclude vendor .",
     "phpcs": "vendor/bin/phpcs --standard=ruleset.xml src/ tests/",
-    "phpstan": "vendor/bin/phpstan analyse --level=max --autoload-file=vendor/autoload.php bin/ public/ src/",
+    "phpstan": "vendor/bin/phpstan analyse --level=max --autoload-file=vendor/autoload.php bin/ src/",
     "phpunit": "vendor/bin/phpunit ./tests/ --coverage-html=./report/coverage/ --whitelist=./src/ --testdox-html=./report/testdox.html --disallow-test-output --process-isolation",
     "psalm": "vendor/bin/psalm --taint-analysis",
     "test": [
