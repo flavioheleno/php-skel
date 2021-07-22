@@ -40,6 +40,7 @@
     "vimeo/psalm": "^4.3"
   },
   "scripts": {
+    "console": "vendor/bin/psysh",
     "infection": "vendor/bin/infection",
     "lint": "vendor/bin/parallel-lint --exclude vendor .",
     "phpcs": "vendor/bin/phpcs --standard=ruleset.xml src/ tests/",
@@ -58,6 +59,7 @@
     ]
   },
   "scripts-descriptions": {
+    "console": "Runs PsySH Console",
     "infection": "Runs mutation test framework",
     "lint": "Runs complete codebase lint testing",
     "phpcs": "Runs coding style checking",

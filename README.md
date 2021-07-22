@@ -46,18 +46,32 @@ The following configuration files are available:
 
 Composer has helper scripts for executing common tasks as seen below.
 
-Script    | Description
-----------|------------
-console   | Uses [psy/psysh](https://packagist.org/packages/psy/psysh) to run an interactive shell
-infection | Uses [infection/infection](https://packagist.org/packages/infection/infection) as mutation test framework
-lint      | Uses [php-parallel-lint/php-parallel-lint](https://packagist.org/packages/php-parallel-lint/php-parallel-lint) to lint source code
-phpcs     | Uses [squizlabs/php_codesniffer](https://packagist.org/packages/squizlabs/php_codesniffer) to check coding style
-phpstan   | Uses [phpstan/phpstan](https://packagist.org/packages/phpstan/phpstan) as static analyser
-phpunit   | Uses [phpunit/phpunit](https://packagist.org/packages/phpunit/phpunit) as test framework
-psalm     | Uses [vimeo/psalm](https://packagist.org/packages/vimeo/psalm) to check for tainted strings
-test      | Runs infection, lint, phpcs, phpstan, phpunit and psalm
+Script        | Description
+--------------|------------
+console       | Uses [psy/psysh](https://packagist.org/packages/psy/psysh) to run an interactive shell
+infection     | Uses [infection/infection](https://packagist.org/packages/infection/infection) as mutation test framework
+lint          | Uses [php-parallel-lint/php-parallel-lint](https://packagist.org/packages/php-parallel-lint/php-parallel-lint) to lint source code
+phpcs         | Uses [squizlabs/php_codesniffer](https://packagist.org/packages/squizlabs/php_codesniffer) to check coding style
+phpstan       | Uses [phpstan/phpstan](https://packagist.org/packages/phpstan/phpstan) as static analyser
+phpunit       | Uses [phpunit/phpunit](https://packagist.org/packages/phpunit/phpunit) as test framework
+psalm         | Uses [vimeo/psalm](https://packagist.org/packages/vimeo/psalm) to check for tainted strings
+test-ci       | Runs library test suite (for continuous integration)
+test-coverage | Runs test-coverage analysis
+test          | Runs infection, lint, phpcs, phpstan, phpunit and psalm
 
 ## Workflows
+
+### Continuous Integration
+
+Executes project test suite using [phpunit/phpunit](https://packagist.org/packages/phpunit/phpunit) on push and pull request events.
+
+Workflow configuration: `.github/workflows/continuous-integration.yml`.
+
+### Static Analysis
+
+Executes static code analysis using [phpstan/phpstan](https://packagist.org/packages/phpstan/phpstan) on push and pull request events.
+
+Workflow configuration: `.github/workflows/static-analysis.yml`.
 
 ### Template sync
 
@@ -66,3 +80,7 @@ Periodically checks for changes in [flavioheleno/php-skel](https://github.com/fl
 Workflow configuration: `.github/workflows/template-sync.yml`.
 
 Source: [solvaholic/template](https://github.com/solvaholic/template)
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
